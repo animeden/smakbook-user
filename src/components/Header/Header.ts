@@ -26,7 +26,6 @@ export class Header {
   }
 
   returnClass(page: string) {
-    console.log(page)
     return page === this.$page
       ? "header__switch__button header__switch__button__selected"
       : "header__switch__button";

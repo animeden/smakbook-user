@@ -3,6 +3,7 @@ import {WIP} from '../../../../components/WIP/WIP';
 import {NgForOf, NgIf, SlicePipe} from '@angular/common';
 import {ArrowIcon} from '../../../../assets/icons/Arrow/Arrow';
 import {ToriiIcon} from '../../../../assets/icons/Torii/Torii';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'LatestUpdates',
@@ -15,11 +16,18 @@ export class LatestUpdates {
   $latest = [{}, {}, {}, {}]
   isHovered: boolean[] = []
 
+  constructor(private router: Router) {
+  }
+
   onMouseEnter(index: number) {
     this.isHovered[index] = true; // Задаємо true для відповідного індексу
   }
 
   onMouseLeave(index: number) {
     this.isHovered[index] = false; // Задаємо false для відповідного індексу
+  }
+
+  goTo(id: number) {
+    this.router.navigate(['manga/' + id]);
   }
 }

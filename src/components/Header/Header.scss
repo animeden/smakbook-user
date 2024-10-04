@@ -40,10 +40,12 @@
       display: flex;
       align-items: center;
       position: relative;
-      &__icon{
+
+      &__icon {
         position: absolute;
         left: 10px;
       }
+
       &__input {
         width: 220px;
         height: 20px;
@@ -60,8 +62,16 @@
           border: none;
         }
 
-        &::placeholder{
+        &::placeholder {
           color: #420002;
+        }
+      }
+    }
+
+    &__items {
+      &__icon {
+        &:hover {
+          cursor: pointer;
         }
       }
     }

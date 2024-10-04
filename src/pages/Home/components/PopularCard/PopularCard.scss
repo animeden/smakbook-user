@@ -50,6 +50,11 @@
       -webkit-line-clamp: 3;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+      }
     }
 
     &__subtitle {
@@ -62,6 +67,13 @@
       -webkit-line-clamp: 3;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      &__genre {
+        &:hover{
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
