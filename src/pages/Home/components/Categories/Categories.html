@@ -1,0 +1,14 @@
+<div class="categories">
+  <div class="categories__control">
+    <div class="categories__control__title">
+      <BonsaiIcon [color]="'red'"/>
+      Категорії
+    </div>
+    <div class="categories__control__move">Переглянути всі -></div>
+  </div>
+  <div class="categories__items">
+    <div class="categories__items__item" *ngFor="let item of $categories">
+      {{ item.title }}
+    </div>
+  </div>
+</div>

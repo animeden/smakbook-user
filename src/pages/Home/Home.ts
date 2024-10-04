@@ -9,11 +9,12 @@ import {HotSpringsIcon} from '../../assets/icons/HotSprings/HotSprings';
 import {BonsaiIcon} from '../../assets/icons/Bonsai/Bonsai';
 import {NgForOf, SlicePipe} from '@angular/common';
 import {LatestUpdates} from './components/LatestUpdates/LatestUpdates';
+import {Categories} from './components/Categories/Categories';
 
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [RouterOutlet, MatIcon, Header, WIP, Page, PopularCard, HotSpringsIcon, BonsaiIcon, NgForOf, SlicePipe, LatestUpdates],
+  imports: [RouterOutlet, MatIcon, Header, WIP, Page, PopularCard, HotSpringsIcon, BonsaiIcon, NgForOf, SlicePipe, LatestUpdates, Categories],
   templateUrl: './Home.html',
   styleUrls: ['./Home.scss']
 })

@@ -1,0 +1,54 @@
+.categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1583px;
+  height: 712px;
+
+  &__control {
+    display: flex;
+    justify-content: space-between;
+
+    &__title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Century Gothic';
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 58px;
+    }
+
+    &__move {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-family: 'Century Gothic';
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: auto;
+    gap: 40px;
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 490px;
+      height: 288px;
+      border-radius: 30px;
+      background: lightcoral;
+      font-family: 'Hakio';
+      font-size: 128px;
+      line-height: 114px;
+      font-weight: 400;
+    }
+  }
+}
