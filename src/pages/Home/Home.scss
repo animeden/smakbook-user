@@ -11,20 +11,19 @@
   &__item-holder{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     width: 330px;
-    padding: 30px 40px;
+    padding: 10px 40px 20px 40px;
     background: #111213;
     border-radius: 30px;
     box-shadow: 0px 4px 20px 0px #00000040;
 
     &__popular{
-      height: 520px;
+      height: 550px;
     }
 
     &__genre{
-      height: 352px;
-      padding: 30px;
+      height: 380px;
     }
 
     &__title{
@@ -41,7 +40,6 @@
     &__items{
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       gap: 20px;
       height: 100%;
       width: 100%;
@@ -54,13 +52,6 @@
     border-radius: 30px;
     background: lightseagreen;
     backdrop-filter: blur(10px)
-  }
-
-  &__latest{
-    width: 1090px;
-    height: 412px;
-    border-radius: 30px;
-    background: lightseagreen;
   }
 
   &__categories{

@@ -7,9 +7,7 @@
           Популярні
         </div>
         <div class="home__item-holder__items">
-          <div *ngFor="let item of $popular | slice:0:3">
-            <PopularCard [data]="item"/>
-          </div>
+          <PopularCard *ngFor="let item of $popular | slice:0:3" [data]="item"/>
         </div>
       </div>
 
@@ -28,9 +26,7 @@
         </div>
       </div>
 
-      <div class="home__latest">
-        <WIP [$title]="'Останні оновлення'"/>
-      </div>
+      <LatestUpdates/>
     </div>
 
     <div class="home__categories">

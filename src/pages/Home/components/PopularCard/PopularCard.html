@@ -1,7 +1,9 @@
 <div class="popular-card">
   <div class="popular-card__image" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
     <div class="popular-card__image__hover" *ngIf="isHovered">
-      test
+      <div class="popular-card__image__hover__play">
+        <ArrowIcon/>
+      </div>
     </div>
   </div>
   <div class="popular-card__info">

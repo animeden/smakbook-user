@@ -1,11 +1,12 @@
 import {Component, Input} from '@angular/core';
 import {WIP} from '../../../../components/WIP/WIP';
 import {NgIf} from '@angular/common';
+import {ArrowIcon} from '../../../../assets/icons/Arrow/Arrow';
 
 @Component({
   selector: 'PopularCard',
   standalone: true,
-  imports: [WIP, NgIf],
+  imports: [WIP, NgIf, ArrowIcon],
   templateUrl: './PopularCard.html',
   styleUrls: ['./PopularCard.scss']
 })

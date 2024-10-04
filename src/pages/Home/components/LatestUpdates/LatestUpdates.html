@@ -1,0 +1,19 @@
+<div class="latest-updates">
+  <div class="latest-updates__control">
+    <div class="latest-updates__control__title">
+      <ToriiIcon/>
+      Останні оновлення
+    </div>
+    <div class="latest-updates__control__move">Переглянути всі -></div>
+  </div>
+  <div class="latest-updates__items">
+    <div class="latest-updates__items__item" *ngFor="let item of $latest | slice:0:4, let  i = index"
+         (mouseenter)="onMouseEnter(i)" (mouseleave)="onMouseLeave(i)">
+      <div class="latest-updates__items__item__hover" *ngIf="isHovered[i]">
+        <div class="latest-updates__items__item__hover__play">
+          <ArrowIcon/> Читати
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
