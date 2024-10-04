@@ -1,0 +1,22 @@
+<div class="header__switch">
+  <div [class]="returnClass( 'home')" (click)="goTo('')">Головна</div>
+  <div [class]="returnClass( 'readingRoom')" (click)="goTo('reading-room')">Читальня
+  </div>
+  <div [class]="returnClass('aboutUs')" (click)="goTo( 'about-us')">Про нас</div>
+</div>
+<LogoIcon (click)="goTo( '')" class="header__logo"/>
+<div class="header__tools">
+  <div class="header__tools__search">
+  <span class="header__tools__search__icon">
+    <DandruffIcon/>
+  </span>
+    <input class="header__tools__search__input"
+           [(ngModel)]="searchTxt"
+           (input)="handleSearchChange($event)"
+           placeholder="Пошук..."/>
+  </div>
+  <div class="header__tools__items">
+    <SenseiIcon/>
+    <MoonIcon/>
+  </div>
+</div>

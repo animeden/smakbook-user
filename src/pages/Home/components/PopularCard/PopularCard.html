@@ -1,0 +1,15 @@
+<div class="popular-card">
+  <div class="popular-card__image" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <div class="popular-card__image__hover" *ngIf="isHovered">
+      test
+    </div>
+  </div>
+  <div class="popular-card__info">
+    <div class="popular-card__info__title">
+      {{ data.title }}
+    </div>
+    <div class="popular-card__info__subtitle">
+      {{ data.genres }}
+    </div>
+  </div>
+</div>

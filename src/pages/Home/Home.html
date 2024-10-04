@@ -1,0 +1,40 @@
+<Page [$page]="'home'">
+  <div class="home">
+    <div class="home__row">
+      <div class="home__item-holder home__item-holder__popular">
+        <div class="home__item-holder__title">
+          <HotSpringsIcon/>
+          Популярні
+        </div>
+        <div class="home__item-holder__items">
+          <div *ngFor="let item of $popular | slice:0:3">
+            <PopularCard [data]="item"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="home__slider">
+        <WIP [$title]="'Слайдер'"/>
+      </div>
+    </div>
+
+    <div class="home__row">
+      <div class="home__item-holder home__item-holder__genre">
+        <div class="home__item-holder__title">
+          <BonsaiIcon/>
+          Жанри
+        </div>
+        <div class="home__item-holder__items">
+        </div>
+      </div>
+
+      <div class="home__latest">
+        <WIP [$title]="'Останні оновлення'"/>
+      </div>
+    </div>
+
+    <div class="home__categories">
+      <WIP [$title]="'Категорії'"/>
+    </div>
+  </div>
+</Page>

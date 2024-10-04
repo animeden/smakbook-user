@@ -1,0 +1,49 @@
+.footer {
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    line-height: 360px;
+    font-size: 350px;
+    font-weight: 400;
+    font-family: 'Hakio';
+  }
+
+  &__details{
+    display: flex;
+    width: 100%;
+    height: 500px;
+    justify-content: space-around;
+    background: #420002;
+    padding: 40px 0;
+    color: #AF9C8D;
+    &__about{
+      width: 800px;
+      &__title{
+        font-family: 'Hakio';
+        font-size: 128px;
+        font-weight: 400;
+        line-height: 114px;
+      }
+      &__subtitle{
+        font-family: 'Hakio';
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 34px;
+      }
+    }
+
+    &__logo{
+      display: flex;
+      width: 400px;
+      justify-content: flex-end;
+    }
+  }
+
+  &__creators{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+}

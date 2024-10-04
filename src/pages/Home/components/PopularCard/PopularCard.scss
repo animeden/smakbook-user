@@ -1,0 +1,51 @@
+.popular-card {
+  display: flex;
+  height: 136px;
+  gap: 40px;
+
+  &__image {
+    height: 136px;
+    width: 100px;
+    background: lightcoral;
+    z-index: 1;
+
+    &__hover {
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: black;
+      opacity: 0.5;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    gap: 6px;
+
+    &__title {
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__subtitle {
+      color: #AF9C8D;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
