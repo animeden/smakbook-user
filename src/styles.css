@@ -14,13 +14,24 @@
   font-style: normal;
 }
 
+:root {
+  --header-color: #111213;
+  --page-color: #AF9C8D;
+  --footer-color: #420002;
+  --page-text-color: #420002;
+  --footer-text-color: #AF9C8D;
+  --brand-color: #111213;
+  --card-color: #111213
+}
+
 * {
   margin: 0;
   font-family: "Century Gothic";
 }
 
 body {
-  background: #AF9C8D;
+  background: var(--page-color);
+  color: var(--page-text-color);
 }
 
 app-root {
@@ -38,7 +49,7 @@ page {
 header {
   width: 100%;
   height: 140px;
-  background: #111213;
+  background: var(--header-color);
   color: #E1C3AB;
   display: flex;
   align-items: center;
@@ -52,5 +63,5 @@ footer {
   padding-top: 80px;
   gap: 80px;
   width: 100%;
-  border-top: 1px solid #420002;
+  border-top: 1px solid var(--footer-color);
 }

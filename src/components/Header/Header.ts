@@ -1,24 +1,38 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {LogoIcon} from '../../assets/icons/Logo/Logo';
 import {FormsModule} from '@angular/forms';
-import {NgOptimizedImage} from '@angular/common';
+import {NgIf, NgOptimizedImage} from '@angular/common';
 import {DandruffIcon} from '../../assets/icons/Dandruff/Dandruff';
 import {SenseiIcon} from '../../assets/icons/Sensei/Sensei';
 import {MoonIcon} from '../../assets/icons/Moon/Moon';
+import {ThemeService} from '../../app/theme.service';
+import {SunIcon} from '../../assets/icons/Sun/Sun';
 
 @Component({
   selector: 'Header',
   standalone: true,
-  imports: [LogoIcon, FormsModule, NgOptimizedImage, DandruffIcon, SenseiIcon, MoonIcon],
+  imports: [LogoIcon, FormsModule, NgOptimizedImage, DandruffIcon, SenseiIcon, MoonIcon, SunIcon, NgIf],
   templateUrl: './Header.html',
   styleUrls: ['./Header.scss']
 })
-export class Header {
+export class Header implements OnInit {
+
   @Input() $page: string = '';
   searchTxt: string = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, protected themeService: ThemeService) {
+  }
+
+  ngOnInit() {
+    const savedTheme = this.themeService.getTheme();
+    this.themeService.applyTheme(savedTheme);
+  }
+
+  toggleTheme() {
+    const currentTheme = this.themeService.getTheme();
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    this.themeService.setTheme(newTheme);
   }
 
   goTo(route: string) {

@@ -11,4 +11,5 @@ import {NgIf} from '@angular/common';
 })
 export class BonsaiIcon {
   @Input() color: string = "white";
+  @Input() size: string = "50";
 }

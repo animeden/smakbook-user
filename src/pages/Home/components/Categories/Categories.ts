@@ -4,6 +4,7 @@ import {NgForOf, NgIf, SlicePipe} from '@angular/common';
 import {ArrowIcon} from '../../../../assets/icons/Arrow/Arrow';
 import {ToriiIcon} from '../../../../assets/icons/Torii/Torii';
 import {BonsaiIcon} from '../../../../assets/icons/Bonsai/Bonsai';
+import {ThemeService} from '../../../../app/theme.service';
 
 @Component({
   selector: 'Categories',
@@ -17,4 +18,11 @@ export class Categories {
     title: '4',
     image: ""
   }, {title: '5', image: ""}, {title: '6', image: ""}]
+
+  constructor(protected themeService: ThemeService) {
+  }
+
+  getIconColor(): string {
+    return this.themeService.getTheme() === 'dark' ? 'white' : 'red';
+  }
 }

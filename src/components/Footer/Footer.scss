@@ -8,6 +8,7 @@
     font-size: 350px;
     font-weight: 400;
     font-family: 'Hakio';
+    color: var(--brand-color);
   }
 
   &__details{
@@ -15,9 +16,9 @@
     width: 100%;
     height: 500px;
     justify-content: space-around;
-    background: #420002;
+    background: var(--footer-color);
     padding: 40px 0;
-    color: #AF9C8D;
+    color: var(--footer-text-color);
     &__about{
       width: 800px;
       &__title{

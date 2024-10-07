@@ -4,6 +4,7 @@ import {NgForOf, NgIf, SlicePipe} from '@angular/common';
 import {ArrowIcon} from '../../../../assets/icons/Arrow/Arrow';
 import {ToriiIcon} from '../../../../assets/icons/Torii/Torii';
 import {Router} from '@angular/router';
+import {ThemeService} from '../../../../app/theme.service';
 
 @Component({
   selector: 'LatestUpdates',
@@ -16,7 +17,11 @@ export class LatestUpdates {
   $latest = [{}, {}, {}, {}]
   isHovered: boolean[] = []
 
-  constructor(private router: Router) {
+  constructor(private router: Router, protected themeService: ThemeService) {
+  }
+
+  getIconColor(): string {
+    return this.themeService.getTheme() === 'dark' ? 'white' : 'red';
   }
 
   onMouseEnter(index: number) {
