@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'ArrowIcon',
@@ -6,4 +6,5 @@ import {Component} from '@angular/core';
   templateUrl: './Arrow.html',
 })
 export class ArrowIcon {
+  @Input() color: string = "#D9D9D9";
 }

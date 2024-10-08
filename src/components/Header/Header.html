@@ -16,7 +16,7 @@
            placeholder="Пошук..."/>
   </div>
   <div class="header__tools__items">
-    <SenseiIcon class="header__tools__items__icon"/>
+    <SenseiIcon class="header__tools__items__icon" (click)="goTo('/login')"/>
     <MoonIcon class="header__tools__items__icon" (click)="toggleTheme()"  *ngIf="themeService.getTheme() === 'light'"/>
     <SunIcon class="header__tools__items__icon" (click)="toggleTheme()"  *ngIf="themeService.getTheme() === 'dark'"/>
   </div>
