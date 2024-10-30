@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {LogoIcon} from '../../assets/icons/Logo/Logo';
+import {LogoIcon} from '../../assets/icons/Logo/Logo/Logo';
 import {FormsModule} from '@angular/forms';
 import {NgIf, NgOptimizedImage} from '@angular/common';
 import {DandruffIcon} from '../../assets/icons/Dandruff/Dandruff';
@@ -8,11 +8,12 @@ import {SenseiIcon} from '../../assets/icons/Sensei/Sensei';
 import {MoonIcon} from '../../assets/icons/Moon/Moon';
 import {ThemeService} from '../../app/theme.service';
 import {SunIcon} from '../../assets/icons/Sun/Sun';
+import {Logo} from '../Logo/Logo';
 
 @Component({
   selector: 'Header',
   standalone: true,
-  imports: [LogoIcon, FormsModule, NgOptimizedImage, DandruffIcon, SenseiIcon, MoonIcon, SunIcon, NgIf],
+  imports: [LogoIcon, FormsModule, NgOptimizedImage, DandruffIcon, SenseiIcon, MoonIcon, SunIcon, NgIf, Logo],
   templateUrl: './Header.html',
   styleUrls: ['./Header.scss']
 })

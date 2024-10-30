@@ -4,7 +4,7 @@
   </div>
   <div [class]="returnClass('aboutUs')" (click)="goTo( 'about-us')">Про нас</div>
 </div>
-<LogoIcon (click)="goTo( '')" class="header__logo"/>
+<Logo [$size]="'120px'" [$font]="'20px'" (click)="goTo( '')" class="header__logo"/>
 <div class="header__tools">
   <div class="header__tools__search">
   <span class="header__tools__search__icon">

@@ -1,2 +1,53 @@
-<WIP [$title]="'Вхід'"/>
+<div class="login">
+
+  <div class="login__back" (click)="goHome()">
+    < Назад
+  </div>
+
+  <div class="login__logo">
+    <Logo [$size]="'1200px'" [$font]="'220px'"/>
+  </div>
+  <div class="login__form">
+
+    <div class="login__form__registration">
+      <span *ngIf="login_mode">Реєстрація</span>
+      <span *ngIf="!login_mode">Вхід</span>
+    </div>
+
+    <div class="login__form__inputs">
+      <input class="login__form__inputs__input"
+             [(ngModel)]="username"
+             (input)="handleUsernameChange($event)"
+             placeholder="Ім'я користувача"/>
+
+      <input class="login__form__inputs__input"
+             [(ngModel)]="password"
+             (input)="handlePasswordChange($event)"
+             [type]="show_password ? 'text' : 'password'"
+             placeholder="Пароль"/>
+
+      <span *ngIf="login_mode"> <input class="login__form__inputs__input"
+                                       [(ngModel)]="password_repeat"
+                                       (input)="handlePasswordRepeatChange($event)"
+                                       [type]="show_password_repeat ? 'text' : 'password'"
+                                       placeholder="Повторіть пароль"/></span>
+
+      <span *ngIf="login_mode"><input class="login__form__inputs__input"
+                                      [(ngModel)]="email"
+                                      (input)="handleEmailChange($event)"
+                                      placeholder="Email"/></span>
+    </div>
+
+    <div class="login__form__button">
+      <span *ngIf="login_mode">Створити аккаунт</span>
+      <span *ngIf="!login_mode">Уввійти</span>
+    </div>
+
+    <div class="login__form__loginout" (click)="changeLoginMode()">
+      <span *ngIf="login_mode">Маєте аккаунт? Увійти -></span>
+      <span *ngIf="!login_mode">Немає аккаунту? Створити -></span>
+    </div>
+
+  </div>
+</div>
 
