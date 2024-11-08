@@ -1,14 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {LogoIcon} from '../../assets/icons/Logo/Logo/Logo';
+import {LogoIcon} from '../../assets/icons/Logo/Logo';
 import {FormsModule} from '@angular/forms';
 import {NgIf, NgOptimizedImage} from '@angular/common';
-import {DandruffIcon} from '../../assets/icons/Dandruff/Dandruff';
-import {SenseiIcon} from '../../assets/icons/Sensei/Sensei';
-import {MoonIcon} from '../../assets/icons/Moon/Moon';
+import {DandruffIcon} from '../../assets/icons/Dandruff';
+import {SenseiIcon} from '../../assets/icons/Sensei';
+import {MoonIcon} from '../../assets/icons/Moon';
 import {ThemeService} from '../../app/theme.service';
-import {SunIcon} from '../../assets/icons/Sun/Sun';
-import {Logo} from '../Logo/Logo';
+import {SunIcon} from '../../assets/icons/Sun';
+import {Logo} from '../Logo';
 
 @Component({
   selector: 'Header',

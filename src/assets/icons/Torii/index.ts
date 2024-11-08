@@ -1,0 +1,1 @@
+export {ToriiIcon} from './Torii';

@@ -1,0 +1,1 @@
+export {LogoLogin} from './LogoLogin';

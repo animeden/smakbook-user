@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {WIP} from '../../../../components/WIP/WIP';
+import {WIP} from '../../../../components/WIP';
 import {NgForOf, NgIf, NgOptimizedImage, NgStyle, SlicePipe} from '@angular/common';
-import {ArrowIcon} from '../../../../assets/icons/Arrow/Arrow';
-import {ToriiIcon} from '../../../../assets/icons/Torii/Torii';
-import {BonsaiIcon} from '../../../../assets/icons/Bonsai/Bonsai';
+import {ArrowIcon} from '../../../../assets/icons/Arrow';
+import {ToriiIcon} from '../../../../assets/icons/Torii';
+import {BonsaiIcon} from '../../../../assets/icons/Bonsai';
 import {ThemeService} from '../../../../app/theme.service';
 
 @Component({

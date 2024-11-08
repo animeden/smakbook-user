@@ -1,0 +1,1 @@
+export {LatestUpdates} from './LatestUpdates';

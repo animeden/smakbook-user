@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {WIP} from '../../../../components/WIP/WIP';
+import {WIP} from '../../../../components/WIP';
 import {NgForOf, NgIf} from '@angular/common';
-import {ArrowIcon} from '../../../../assets/icons/Arrow/Arrow';
+import {ArrowIcon} from '../../../../assets/icons/Arrow';
 import {Router} from '@angular/router';
 import {last} from 'rxjs';
 

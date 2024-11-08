@@ -1,20 +1,20 @@
 import {Component, SimpleChanges, OnChanges} from '@angular/core';
 import {Router, RouterOutlet} from '@angular/router';
-import {WIP} from '../../components/WIP/WIP';
-import {Header} from '../../components/Header/Header';
-import {Page} from '../../components/Page/Page';
-import {LogoIcon} from '../../assets/icons/Logo/Logo/Logo';
+import {WIP} from '../../components/WIP';
+import {Header} from '../../components/Header';
+import {Page} from '../../components/Page';
+import {LogoIcon} from '../../assets/icons/Logo/Logo';
 import {FormsModule} from '@angular/forms';
 import {NgIf} from '@angular/common';
-import {ArrowIcon} from '../../assets/icons/Arrow/Arrow';
-import {OpenEyeIcon} from '../../assets/icons/Eyes/Open/Open';
-import {CloseEyeIcon} from '../../assets/icons/Eyes/Close/Close';
+import {ArrowIcon} from '../../assets/icons/Arrow';
+import {OpenEyeIcon} from '../../assets/icons/Eyes/Open';
+import {CloseEyeIcon} from '../../assets/icons/Eyes/Close';
 // @ts-ignore
 import Validator from "validatorjs";
 import {validation_login_username, validation_login_email} from './validation';
 // @ts-ignore
 import en from 'validatorjs/src/lang/en';
-import {LogoLogin} from '../../components/LogoLogin/LogoLogin';
+import {LogoLogin} from '../../components/LogoLogin';
 
 Validator.setMessages('en', en);
 

@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {WIP} from '../../components/WIP/WIP';
-import {Page} from '../../components/Page/Page';
+import {WIP} from '../../components/WIP';
+import {Page} from '../../components/Page';
 
 @Component({
   selector: 'Manga',

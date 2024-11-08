@@ -1,0 +1,1 @@
+export {DandruffIcon} from './Dandruff';

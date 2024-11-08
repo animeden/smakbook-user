@@ -1,9 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {LogoIcon} from '../../assets/icons/Logo/Logo/Logo';
-import {Router} from '@angular/router';
-import {Header} from "../Header/Header";
-import {Logo} from '../Logo/Logo';
+import {LogoIcon} from '../../assets/icons/Logo/Logo';
+import {Header} from "../Header";
+import {Logo} from '../Logo';
 import {ThemeService} from '../../app/theme.service';
 import {NgIf} from '@angular/common';
 

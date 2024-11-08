@@ -1,0 +1,1 @@
+export {HotSpringsIcon} from './HotSprings';

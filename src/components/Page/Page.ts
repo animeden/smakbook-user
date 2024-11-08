@@ -1,8 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
-import {LogoIcon} from '../../assets/icons/Logo/Logo/Logo';
-import {Header} from "../Header/Header";
-import {Footer} from '../Footer/Footer';
+import {LogoIcon} from '../../assets/icons/Logo/Logo';
+import {Header} from "../Header";
+import {Footer} from '../Footer';
 
 @Component({
   selector: 'Page',

@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {WIP} from '../../../../components/WIP/WIP';
+import {WIP} from '../../../../components/WIP';
 import {NgForOf, NgIf, SlicePipe} from '@angular/common';
-import {ArrowIcon} from '../../../../assets/icons/Arrow/Arrow';
-import {ToriiIcon} from '../../../../assets/icons/Torii/Torii';
+import {ArrowIcon} from '../../../../assets/icons/Arrow';
+import {ToriiIcon} from '../../../../assets/icons/Torii';
 import {Router} from '@angular/router';
 import {ThemeService} from '../../../../app/theme.service';
 

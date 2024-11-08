@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {WaveIcon} from '../../assets/icons/Logo/Wave/Wave';
-import {LogoIcon} from '../../assets/icons/Logo/Logo/Logo';
+import {WaveIcon} from '../../assets/icons/Logo/Wave';
+import {LogoIcon} from '../../assets/icons/Logo/Logo';
 
 @Component({
   selector: 'LogoLogin',

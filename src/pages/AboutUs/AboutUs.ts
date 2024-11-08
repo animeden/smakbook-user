@@ -1,17 +1,13 @@
 import {Component} from '@angular/core';
 import {Router, RouterOutlet} from '@angular/router';
-import {MatIcon} from '@angular/material/icon';
-import {Header} from '../../components/Header/Header';
-import {WIP} from '../../components/WIP/WIP';
-import {Page} from '../../components/Page/Page';
-import {Store} from '@ngrx/store';
-import {AppState} from '../../store/app.reducer';
-import {setPage} from '../../store/app.actions';
+import {Header} from '../../components/Header';
+import {WIP} from '../../components/WIP';
+import {Page} from '../../components/Page';
 
 @Component({
   selector: 'about-us',
   standalone: true,
-  imports: [RouterOutlet, MatIcon, Header, WIP, Page],
+  imports: [RouterOutlet, Header, WIP, Page],
   templateUrl: './AboutUs.html',
   styleUrls: ['./AboutUs.scss']
 })

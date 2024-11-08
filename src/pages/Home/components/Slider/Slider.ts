@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
-import {WIP} from '../../../../components/WIP/WIP';
+import {WIP} from '../../../../components/WIP';
 import {NgClass, NgForOf, NgIf, SlicePipe} from '@angular/common';
-import {ArrowIcon} from '../../../../assets/icons/Arrow/Arrow';
+import {ArrowIcon} from '../../../../assets/icons/Arrow';
 import {last} from 'rxjs';
 
 @Component({
