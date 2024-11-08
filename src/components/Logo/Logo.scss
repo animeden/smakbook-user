@@ -3,6 +3,10 @@
   border-radius: 50%;
   overflow: hidden;
 
+  &__swap-colors{
+    background: #420002;
+  }
+
   &__circle {
     border-radius: 50%;
     background: #420002;
@@ -11,6 +15,10 @@
     position: relative;
     left: 54%;
     top: 14%;
+
+    &__swap-colors{
+      background: #AF9C8D;
+    }
   }
 
   &__shape {
@@ -52,6 +60,10 @@
       line-height: 14px;
       margin-left: 16%;
       margin-top: 3%;
+
+      &__swap-colors{
+        color: #AF9C8D;
+      }
     }
   }
 }

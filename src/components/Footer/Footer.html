@@ -1,4 +1,4 @@
-<div class="footer__title">SmakNovels</div>
+<div class="footer__title" [style.font-size]="$font">SmakNovels</div>
 <div class="footer__details">
   <div class="footer__details__about">
     <div class="footer__details__about__title">SmakNovels</div>
@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="footer__details__logo">
-    <Logo [$size]="'400px'" [$font]="'74px'"/>
+    <Logo [$size]="'400px'" [$font]="'74px'" [$swap]="themeService.getTheme() === 'dark'"/>
   </div>
 </div>
 <div class="footer__creators">

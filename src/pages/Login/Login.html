@@ -5,7 +5,7 @@
   </div>
 
   <div class="login__logo">
-    <Logo [$size]="'1200px'" [$font]="'220px'"/>
+    <LogoLogin [$size]="'1200px'" [$font]="'160px'"/>
   </div>
   <div class="login__form">
 
@@ -15,27 +15,71 @@
     </div>
 
     <div class="login__form__inputs">
+      <span class="login__form__inputs__input__holder">
+        <div *ngIf="validation_error?.errors?.username?.[0]?.length > 0"
+             class="login__form__inputs__input__error-holder">
+          <div class="login__form__inputs__input__error-holder__error">Імя користувача не валідне</div>
+        </div>
       <input class="login__form__inputs__input"
              [(ngModel)]="username"
              (input)="handleUsernameChange($event)"
              placeholder="Ім'я користувача"/>
+      </span>
 
+      <span *ngIf="login_mode" class="login__form__inputs__input__holder">
+
+        <div *ngIf="validation_error?.errors?.password?.[0]?.length > 0"
+             class="login__form__inputs__input__error-holder">
+          <div class="login__form__inputs__input__error-holder__error">Паролі не збігаються</div>
+        </div>
+
+        <input class="login__form__inputs__input"
+               [(ngModel)]="password"
+               (input)="handlePasswordChange($event)"
+               [type]="show_password ? 'text' : 'password'"
+               placeholder="Пароль"/>
+        <span *ngIf="show_password" class="login__form__inputs__input__eye-holder">
+          <OpenEyeIcon class="login__form__inputs__input__eye" (click)="changeShowPasswordMode()"/>
+        </span>
+
+        <span *ngIf="!show_password" class="login__form__inputs__input__eye-holder">
+          <CloseEyeIcon class="login__form__inputs__input__eye" (click)="changeShowPasswordMode()"/>
+        </span>
+      </span>
+
+      <span *ngIf="login_mode" class="login__form__inputs__input__holder">
+
+        <div *ngIf="validation_error?.errors?.password?.[0]?.length > 0"
+             class="login__form__inputs__input__error-holder">
+          <div class="login__form__inputs__input__error-holder__error">Паролі не збігаються</div>
+        </div>
+
+        <input
+        class="login__form__inputs__input login__form__inputs__input__password"
+        [(ngModel)]="password_repeat"
+        (input)="handlePasswordRepeatChange($event)"
+        [type]="show_password_repeat ? 'text' : 'password'"
+        placeholder="Повторіть пароль"/>
+
+        <span *ngIf="show_password_repeat" class="login__form__inputs__input__eye-holder">
+          <OpenEyeIcon class="login__form__inputs__input__eye" (click)="changeShowPasswordRepeatMode()"/>
+        </span>
+
+        <span *ngIf="!show_password_repeat" class="login__form__inputs__input__eye-holder">
+          <CloseEyeIcon class="login__form__inputs__input__eye" (click)="changeShowPasswordRepeatMode()"/>
+        </span>
+      </span>
+
+      <span class="login__form__inputs__input__holder">
+        <div *ngIf="validation_error?.errors?.email?.[0]?.length > 0"
+             class="login__form__inputs__input__error-holder">
+          <div class="login__form__inputs__input__error-holder__error">Емейл не валідний</div>
+        </div>
       <input class="login__form__inputs__input"
-             [(ngModel)]="password"
-             (input)="handlePasswordChange($event)"
-             [type]="show_password ? 'text' : 'password'"
-             placeholder="Пароль"/>
-
-      <span *ngIf="login_mode"> <input class="login__form__inputs__input"
-                                       [(ngModel)]="password_repeat"
-                                       (input)="handlePasswordRepeatChange($event)"
-                                       [type]="show_password_repeat ? 'text' : 'password'"
-                                       placeholder="Повторіть пароль"/></span>
-
-      <span *ngIf="login_mode"><input class="login__form__inputs__input"
-                                      [(ngModel)]="email"
-                                      (input)="handleEmailChange($event)"
-                                      placeholder="Email"/></span>
+             [(ngModel)]="email"
+             (input)="handleEmailChange($event)"
+             placeholder="Email"/>
+        </span>
     </div>
 
     <div class="login__form__button">

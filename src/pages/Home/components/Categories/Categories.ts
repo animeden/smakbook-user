@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {WIP} from '../../../../components/WIP/WIP';
-import {NgForOf, NgIf, SlicePipe} from '@angular/common';
+import {NgForOf, NgIf, NgOptimizedImage, NgStyle, SlicePipe} from '@angular/common';
 import {ArrowIcon} from '../../../../assets/icons/Arrow/Arrow';
 import {ToriiIcon} from '../../../../assets/icons/Torii/Torii';
 import {BonsaiIcon} from '../../../../assets/icons/Bonsai/Bonsai';
@@ -9,15 +9,21 @@ import {ThemeService} from '../../../../app/theme.service';
 @Component({
   selector: 'Categories',
   standalone: true,
-  imports: [WIP, NgIf, ArrowIcon, ToriiIcon, NgForOf, SlicePipe, BonsaiIcon],
+  imports: [WIP, NgIf, ArrowIcon, ToriiIcon, NgForOf, SlicePipe, BonsaiIcon, NgStyle, NgOptimizedImage],
   templateUrl: './Categories.html',
   styleUrls: ['./Categories.scss']
 })
 export class Categories {
-  $categories = [{title: '1', image: ""}, {title: '2', image: ""}, {title: '3', image: ""}, {
-    title: '4',
-    image: ""
-  }, {title: '5', image: ""}, {title: '6', image: ""}]
+  $categories = [{title: 'Шьонен', image: "url(/assets/images/categories/shonen.png)"}, {
+    title: 'Романтика',
+    image: "url(/assets/images/categories/romantic.png)"
+  }, {title: 'Фентазі', image: "url(/assets/images/categories/fantasy.png)"}, {
+    title: 'Шьоджьо',
+    image: "url(/assets/images/categories/shojo.png)"
+  }, {title: 'Трилер', image: "url(/assets/images/categories/horror.png)"}, {
+    title: 'Ісекай',
+    image: "url(/assets/images/categories/isekai.png)"
+  }]
 
   constructor(protected themeService: ThemeService) {
   }

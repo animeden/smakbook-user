@@ -1,13 +1,12 @@
 .latest-updates{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  width: 1090px;
-  height: 410px;
+  gap: 30px;
 
   &__control{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     &__title{
       display: flex;
@@ -37,8 +36,8 @@
 
   &__items{
     display: flex;
-    justify-content: space-between;
-    height: 310px;
+    flex-wrap: wrap;
+    gap: 59px;
 
     &__item{
       width: 228px;

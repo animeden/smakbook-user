@@ -1,5 +1,5 @@
-<div class="logo" [style.width]="$size" [style.height]="$size">
-  <div class="logo__circle"></div>
+<div [ngClass]="{'logo__swap-colors': $swap}" class="logo" [style.width]="$size" [style.height]="$size">
+  <div [ngClass]="{'logo__circle__swap-colors': $swap}" class="logo__circle"></div>
   <div class="logo__shape">
     <WaveIcon/>
   </div>
@@ -10,7 +10,7 @@
     <div class="logo__txt__title" [style.font-size]="$font">
       SMAK
     </div>
-    <div class="logo__txt__subtitle" [style.font-size]="'calc('+$font+'/1.5)'">
+    <div [ngClass]="{'logo__txt__subtitle__swap-colors': $swap}" class="logo__txt__subtitle" [style.font-size]="'calc('+$font+'/1.5)'">
       novels
     </div>
   </div>
