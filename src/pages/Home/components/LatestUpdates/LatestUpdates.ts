@@ -32,7 +32,11 @@ export class LatestUpdates {
     this.isHovered[index] = false; // Задаємо false для відповідного індексу
   }
 
-  goTo(id: number) {
+  goToManga(id: number) {
     this.router.navigate(['manga/' + id]);
+  }
+
+  goToReading() {
+    this.router.navigate(['reading-room/']);
   }
 }

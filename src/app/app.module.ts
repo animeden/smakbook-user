@@ -9,6 +9,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {HttpClientModule} from '@angular/common/http';
 import {StoreModule} from '@ngrx/store';
 import {appReducer} from '../store/app.reducer';
+import {ScrollGuard} from './guards/reading-room.guard';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import {appReducer} from '../store/app.reducer';
     HttpClientModule,
     StoreModule.forRoot({app: appReducer})
   ],
-  providers: [],
+  providers: [ScrollGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
+import {Router, RouterOutlet} from '@angular/router';
 import {MatIcon} from '@angular/material/icon';
 import {Header} from '../../components/Header';
 import {WIP} from '../../components/WIP';
@@ -12,6 +12,7 @@ import {LatestUpdates} from './components/LatestUpdates';
 import {Categories} from './components/Categories';
 import {Slider} from './components/Slider';
 import {GlobeIcon} from '../../assets/icons/Globe';
+import {ThemeService} from '../../app/theme.service';
 
 @Component({
   selector: 'home',
@@ -34,4 +35,16 @@ export class Home {
     genres: "Меха, Драма, Трагедія, Бойовик, Екшн, Фантастика, Сейнен",
     image: ""
   }]
+
+
+  constructor(private router: Router) {
+  }
+
+  goToReadingCountry(country: string) {
+    this.router.navigate(['reading-room/'], {
+      queryParams: {
+        countries: country
+      }
+    });
+  }
 }

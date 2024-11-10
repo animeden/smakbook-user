@@ -6,7 +6,9 @@
       <div class="slider__slide__content__items">
         <div class="slider__slide__content__items__genres">
           <ng-container *ngFor="let genre of slide.genres.split(', ') | slice:0:4">
-            <div class="slider__slide__content__items__genres__genre">{{ genre }}</div>
+            <div class="slider__slide__content__items__genres__genre"
+                 (click)="goToReadingParams(genre.toLowerCase())">{{ genre }}
+            </div>
           </ng-container>
         </div>
         <div class="slider__slide__content__items__title">
@@ -15,8 +17,9 @@
         <div class="slider__slide__content__items__description">
           {{ slide.description }}
         </div>
-        <div class="slider__slide__content__items__read">
-          <ArrowIcon [color]="'#420002'"/> Читати
+        <div class="slider__slide__content__items__read" (click)="goToManga(slide.id)">
+          <ArrowIcon [color]="'#420002'"/>
+          Читати
         </div>
       </div>
       <div class="slider__slide__content__image">

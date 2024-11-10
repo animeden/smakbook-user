@@ -5,6 +5,7 @@ import {ArrowIcon} from '../../../../assets/icons/Arrow';
 import {ToriiIcon} from '../../../../assets/icons/Torii';
 import {BonsaiIcon} from '../../../../assets/icons/Bonsai';
 import {ThemeService} from '../../../../app/theme.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'Categories',
@@ -25,10 +26,22 @@ export class Categories {
     image: "url(/assets/images/categories/isekai.png)"
   }]
 
-  constructor(protected themeService: ThemeService) {
+  constructor(private router: Router, protected themeService: ThemeService) {
   }
 
   getIconColor(): string {
     return this.themeService.getTheme() === 'dark' ? 'white' : 'red';
+  }
+
+  goToReading() {
+    this.router.navigate(['reading-room/']);
+  }
+
+  goToReadingParams(category: string) {
+    this.router.navigate(['reading-room/'], {
+      queryParams: {
+        categories: category
+      }
+    });
   }
 }

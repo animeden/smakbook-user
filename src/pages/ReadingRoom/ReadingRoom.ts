@@ -9,11 +9,13 @@ import {FormsModule} from '@angular/forms';
 import {Pagination} from '../../components/Pagination/Pagination';
 import {ToriiIcon} from '../../assets/icons/Torii';
 import {first} from 'rxjs';
+import {GlobeIcon} from '../../assets/icons/Globe';
+import {BonsaiIcon} from '../../assets/icons/Bonsai';
 
 @Component({
   selector: 'reading-room',
   standalone: true,
-  imports: [RouterOutlet, WIP, Page, MangaCard, NgForOf, NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, FormsModule, Pagination, ToriiIcon, NgIf],
+  imports: [RouterOutlet, WIP, Page, MangaCard, NgForOf, NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, FormsModule, Pagination, ToriiIcon, NgIf, GlobeIcon, BonsaiIcon],
   templateUrl: './ReadingRoom.html',
   styleUrls: ['./ReadingRoom.scss']
 })
@@ -85,7 +87,16 @@ export class ReadingRoom implements AfterViewInit {
         this.$selectedFilterOption = params['filterOption'];
       }
       if (params['tags']) {
-        this.$selectedTagsOptions = this.parseTagsParam(params['tags']);
+        this.$selectedTagsOptions = this.parseStringParam(params['tags']);
+      }
+      if (params['countries']) {
+        this.$selectedCountries = this.parseStringParam(params['countries']);
+      }
+      if (params['categories']) {
+        this.$selectedCategories = this.parseStringParam(params['categories']);
+      }
+      if (params['status']) {
+        this.$selectedStatus = this.parseStringParam(params['status']);
       }
     });
   }
@@ -107,9 +118,13 @@ export class ReadingRoom implements AfterViewInit {
       queryParams: {
         page: this.$page,
         filterOption: this.$selectedFilterOption,
-        tags: this.$selectedTagsOptions.map(tag => tag).join(',')
+        tags: this.$selectedTagsOptions.map(tag => tag).join(','),
+        countries: this.$selectedCountries.map(country => country).join(','),
+        categories: this.$selectedCategories.map(category => category).join(','),
+        status: this.$selectedStatus.map(status => status).join(',')
       },
-      queryParamsHandling: 'merge'
+      queryParamsHandling: 'merge',
+      state: {scrollPositionRestoration: 'enabled'},
     });
   }
 
@@ -120,7 +135,7 @@ export class ReadingRoom implements AfterViewInit {
   $selectedTagsOptions: Array<string> = [];
   filteredTagsOptions: Array<{ value: string, label: string }> = this.$tagsOptions;
 
-  parseTagsParam(tagsParam: string): Array<string> {
+  parseStringParam(tagsParam: string): Array<string> {
     return tagsParam.split(',').map(tag => {
       return tag;
     });
@@ -131,6 +146,57 @@ export class ReadingRoom implements AfterViewInit {
     this.filteredTagsOptions = this.$tagsOptions.filter(tag =>
       !this.$selectedTagsOptions.includes(tag.value)
     );
+    this.updateUrl();
+  }
+
+  $countries: Array<string> = ["японія", "китай", "корея", "сша"];
+  $selectedCountries: Array<string> = ["японія", "китай", "корея", "сша"];
+
+  isSelectedCountries(option: string): boolean {
+    return this.$selectedCountries.includes(option);
+  }
+
+  toggleSelectionCountries(option: string): void {
+    if (this.isSelectedCountries(option)) {
+      this.$selectedCountries = this.$selectedCountries.filter(item => item !== option);
+    } else {
+      this.$selectedCountries.push(option);
+    }
+
+    this.updateUrl();
+  }
+
+  $categories: Array<string> = ["наукова фантастика", "трилер", "фанфік", "кодомо", "історія", "трагедія", "джьосей", "шьоджьо", "космічна опера", "фарс", "спорт", "вестерн", "крутарство/шахрайство", "кіберпанк", "постапокаліпсис", "стімпанк", "жахи", "шьонен", "готика", "сентай", "філософія", "сянься", "психологія", "шьоне", "детектив", "містика", "драма", "романтика", "школа", "еччі", "ісекай", "буденність", "фентезі", "бойовик", "екшн", "пригоди", "фантастика", "комедія", "сейнен", "меха"];
+  $selectedCategories: Array<string> = ["наукова фантастика", "трилер", "фанфік", "кодомо", "історія", "трагедія", "джьосей", "шьоджьо", "космічна опера", "фарс", "спорт", "вестерн", "крутарство/шахрайство", "кіберпанк", "постапокаліпсис", "стімпанк", "жахи", "шьонен", "готика", "сентай", "філософія", "сянься", "психологія", "шьоне", "детектив", "містика", "драма", "романтика", "школа", "еччі", "ісекай", "буденність", "фентезі", "бойовик", "екшн", "пригоди", "фантастика", "комедія", "сейнен", "меха"];
+
+  isSelectedCategories(option: string): boolean {
+    return this.$selectedCategories.includes(option);
+  }
+
+  toggleSelectionCategories(option: string): void {
+    if (this.isSelectedCategories(option)) {
+      this.$selectedCategories = this.$selectedCategories.filter(item => item !== option);
+    } else {
+      this.$selectedCategories.push(option);
+    }
+
+    this.updateUrl();
+  }
+
+  $status: Array<string> = ["перекладається", "завершено", "призупинено"];
+  $selectedStatus: Array<string> = ["перекладається", "завершено", "призупинено"];
+
+  isSelectedStatus(option: string): boolean {
+    return this.$selectedStatus.includes(option);
+  }
+
+  toggleSelectionStatus(option: string): void {
+    if (this.isSelectedStatus(option)) {
+      this.$selectedStatus = this.$selectedStatus.filter(item => item !== option);
+    } else {
+      this.$selectedStatus.push(option);
+    }
+
     this.updateUrl();
   }
 }

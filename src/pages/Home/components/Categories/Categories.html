@@ -4,12 +4,12 @@
       <BonsaiIcon [color]="getIconColor()" size="60"/>
       Категорії
     </div>
-    <div class="categories__control__move">Переглянути всі -></div>
+    <div class="categories__control__move" (click)="goToReading()">Переглянути всі -></div>
   </div>
   <div class="categories__items">
-    <div class="categories__items__item" *ngFor="let item of $categories" [style.background-image]="item.image">
+    <div class="categories__items__item" *ngFor="let item of $categories" [style.background-image]="item.image" (click)="goToReadingParams(item.title.toLowerCase())">
       <div class="categories__items__item__content">
-      {{ item.title }}
+        {{ item.title }}
       </div>
     </div>
   </div>

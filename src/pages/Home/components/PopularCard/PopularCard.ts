@@ -32,7 +32,15 @@ export class PopularCard {
     this.isHovered = false;
   }
 
-  goTo(id: number) {
+  goToManga(id: number) {
     this.router.navigate(['manga/' + id]);
+  }
+
+  goToReadingParams(category: string) {
+    this.router.navigate(['reading-room/'], {
+      queryParams: {
+        categories: category
+      }
+    });
   }
 }

@@ -4,11 +4,11 @@
       <ToriiIcon [color]="getIconColor()"/>
       Останні оновлення
     </div>
-    <div class="latest-updates__control__move">Переглянути всі -></div>
+    <div class="latest-updates__control__move" (click)="goToReading()">Переглянути всі -></div>
   </div>
   <div class="latest-updates__items">
     <div class="latest-updates__items__item" *ngFor="let item of $latest | slice:0:4, let  i = index"
-         (mouseenter)="onMouseEnter(i)" (mouseleave)="onMouseLeave(i)" (click)="goTo(9)">
+         (mouseenter)="onMouseEnter(i)" (mouseleave)="onMouseLeave(i)" (click)="goToManga(9)">
       <div class="latest-updates__items__item__hover" *ngIf="isHovered[i]">
         <div class="latest-updates__items__item__hover__play">
           <ArrowIcon/>

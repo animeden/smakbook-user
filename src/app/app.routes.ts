@@ -5,6 +5,7 @@ import {Login} from '../pages/Login/Login';
 import {ReadingRoom} from '../pages/ReadingRoom/ReadingRoom';
 import {AboutUs} from '../pages/AboutUs/AboutUs';
 import {Manga} from '../pages/Manga/Manga';
+import {ScrollGuard} from './guards/reading-room.guard';
 
 export const routes: Routes = [
   {path: '', component: Home},
@@ -14,7 +15,7 @@ export const routes: Routes = [
 ];
 
 export const readingRoute: Routes = [
-  {path: 'reading-room', component: ReadingRoom},
+  {path: 'reading-room', component: ReadingRoom, canActivate: [ScrollGuard]}
 ]
 
 @NgModule({

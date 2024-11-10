@@ -7,7 +7,7 @@
       <div class="reading-room__holder__items">
         <ng-select [class]="'reading-room__holder__items__select'" [items]="$filterOptions" bindLabel="label"
                    bindValue="value"
-                   [(ngModel)]="$selectedFilterOption" [searchable]="false" [clearable]="false"  (change)="updateUrl()">
+                   [(ngModel)]="$selectedFilterOption" [searchable]="false" [clearable]="false" (change)="updateUrl()">
         </ng-select>
         <div class="reading-room__holder__items__manga">
           <MangaCard *ngFor="let item of mangas" [$manga]="item"/>
@@ -17,9 +17,54 @@
         </div>
       </div>
       <div class="reading-room__holder__filters">
-        <div class="reading-room__holder__filters__holder"></div>
-        <div class="reading-room__holder__filters__holder"></div>
-        <div class="reading-room__holder__filters__holder"></div>
+        <div class="reading-room__holder__filters__holder">
+          <div class="reading-room__holder__filters__holder__title">
+            <GlobeIcon/>
+            Країни
+          </div>
+          <div class="reading-room__holder__filters__holder__selects">
+            <div class="reading-room__holder__filters__holder__selects__select-holder"
+                 *ngFor="let option of $countries">
+              <input class="reading-room__holder__filters__holder__selects__select-holder__select" type="checkbox"
+                     [checked]="isSelectedCountries(option)" (change)="toggleSelectionCountries(option)"/>
+              {{ option }}
+            </div>
+          </div>
+        </div>
+        <div class="reading-room__holder__filters__holder">
+          <div class="reading-room__holder__filters__holder__title">
+            <BonsaiIcon/>
+            Жанри
+          </div>
+          <div
+            class="reading-room__holder__filters__holder__selects reading-room__holder__filters__holder__selects__change">
+            <div
+              class="reading-room__holder__filters__holder__selects__select-holder reading-room__holder__filters__holder__selects__select-holder__change"
+              *ngFor="let option of $categories">
+              <input
+                class="reading-room__holder__filters__holder__selects__select-holder__select reading-room__holder__filters__holder__selects__select-holder__select__change"
+                type="checkbox" [checked]="isSelectedCategories(option)" (change)="toggleSelectionCategories(option)"/>
+              {{ option }}
+            </div>
+          </div>
+        </div>
+        <div class="reading-room__holder__filters__holder">
+          <div class="reading-room__holder__filters__holder__title">
+            <BonsaiIcon/>
+            Статус перекладу
+          </div>
+          <div
+            class="reading-room__holder__filters__holder__selects reading-room__holder__filters__holder__selects__change">
+            <div
+              class="reading-room__holder__filters__holder__selects__select-holder reading-room__holder__filters__holder__selects__select-holder__change"
+              *ngFor="let option of $status">
+              <input
+                class="reading-room__holder__filters__holder__selects__select-holder__select reading-room__holder__filters__holder__selects__select-holder__select__change"
+                type="checkbox" [checked]="isSelectedStatus(option)" (change)="toggleSelectionStatus(option)"/>
+              {{ option }}
+            </div>
+          </div>
+        </div>
         <div class="reading-room__holder__filters__select-holder">
           <div class="reading-room__holder__filters__select-holder__title">
             <ToriiIcon [size]="'50px'"/>
@@ -28,7 +73,7 @@
           <ng-select [class]="'reading-room__holder__filters__select-holder__select'" [items]="filteredTagsOptions"
                      bindLabel="label" placeholder="Введіть теги"
                      bindValue="value"
-                     [(ngModel)]="$selectedTagsOptions" [multiple]="true" (change)="onTagChange()" >
+                     [(ngModel)]="$selectedTagsOptions" [multiple]="true" (change)="onTagChange()">
           </ng-select>
         </div>
       </div>
