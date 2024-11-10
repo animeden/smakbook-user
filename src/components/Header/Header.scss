@@ -7,6 +7,9 @@
     &__button {
       height: 30px;
       font-size: 24px;
+      font-weight: 700;
+      line-height: 29px;
+
 
       &:hover {
         cursor: pointer;
@@ -41,7 +44,7 @@
 
       &__icon {
         position: absolute;
-        left: 10px;
+        left: 20px;
       }
 
       &__input {
@@ -52,7 +55,7 @@
         border: none;
         outline: none;
         padding: 20px;
-        padding-left: 60px;
+        padding-left: 70px;
         font-size: 20px;
         color: #420002;
         box-shadow: 0px 4px 4px 2px #00000052 inset;

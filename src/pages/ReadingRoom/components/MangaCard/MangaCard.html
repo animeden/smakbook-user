@@ -1,0 +1,17 @@
+<div class="manga-card" (click)="goTo(9)">
+  <div class="manga-card__image" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <div class="manga-card__image__hover" *ngIf="isHovered">
+      <div class="manga-card__image__hover__info">
+        <div class="manga-card__image__hover__info__upper">
+          <div class="manga-card__image__hover__info__upper__title" [title]="$manga.name">
+            {{$manga.name}}
+          </div>
+          <div class="manga-card__image__hover__info__upper__subtitle">
+            {{$manga.country}}
+          </div>
+        </div>
+        <div class="manga-card__image__hover__info__under">{{$manga.status}}</div>
+      </div>
+    </div>
+  </div>
+</div>

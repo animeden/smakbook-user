@@ -25,6 +25,7 @@ export class ThemeService {
       root.style.setProperty('--footer-text-color', '#420002');
       root.style.setProperty('--brand-color', '#AF9C8D');
       root.style.setProperty('--card-color', '#39393A');
+      root.style.setProperty('--manga-color', '#39393A');
     } else {
       root.style.setProperty('--header-color', '#111213');
       root.style.setProperty('--page-color', '#AF9C8D');
@@ -33,6 +34,7 @@ export class ThemeService {
       root.style.setProperty('--footer-text-color', '#AF9C8D');
       root.style.setProperty('--brand-color', '#111213');
       root.style.setProperty('--card-color', '#111213');
+      root.style.setProperty('--manga-color', '#796C62');
     }
   }
 }

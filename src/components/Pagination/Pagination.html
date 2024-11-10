@@ -1,0 +1,11 @@
+<div class="pagination">
+  <div class="pagination__arrow" *ngIf="$total/$max >= 1" (click)="prevPage()"
+       [ngClass]="{ 'pagination__disabled': $page === 1 }"> < Назад
+  </div>
+  <div class="pagination__page" *ngFor="let page of pages" (click)="goToPage(page)"
+       [ngClass]="{ 'pagination__selected': $page === page , 'pagination__disabled': page === '...'}">{{ page }}
+  </div>
+  <div class="pagination__arrow" *ngIf="$total/$max >= 1" (click)="nextPage()"
+       [ngClass]="{ 'pagination__disabled': $page === totalPages }"> Вперед >
+  </div>
+</div>

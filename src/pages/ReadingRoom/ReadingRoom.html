@@ -1,3 +1,37 @@
 <Page [$page]="'readingRoom'">
-  <WIP [$title]="'Читальня'"/>
+  <div class="reading-room">
+    <div class="reading-room__title">
+      Читальня
+    </div>
+    <div class="reading-room__holder">
+      <div class="reading-room__holder__items">
+        <ng-select [class]="'reading-room__holder__items__select'" [items]="$filterOptions" bindLabel="label"
+                   bindValue="value"
+                   [(ngModel)]="$selectedFilterOption" [searchable]="false" [clearable]="false"  (change)="updateUrl()">
+        </ng-select>
+        <div class="reading-room__holder__items__manga">
+          <MangaCard *ngFor="let item of mangas" [$manga]="item"/>
+        </div>
+        <div class="reading-room__holder__items__pagination">
+          <Pagination [$total]="$totalItems" [$page]="$page" [$max]="$maxItems" (pageChange)="updatePage($event)"/>
+        </div>
+      </div>
+      <div class="reading-room__holder__filters">
+        <div class="reading-room__holder__filters__holder"></div>
+        <div class="reading-room__holder__filters__holder"></div>
+        <div class="reading-room__holder__filters__holder"></div>
+        <div class="reading-room__holder__filters__select-holder">
+          <div class="reading-room__holder__filters__select-holder__title">
+            <ToriiIcon [size]="'50px'"/>
+            Теги
+          </div>
+          <ng-select [class]="'reading-room__holder__filters__select-holder__select'" [items]="filteredTagsOptions"
+                     bindLabel="label" placeholder="Введіть теги"
+                     bindValue="value"
+                     [(ngModel)]="$selectedTagsOptions" [multiple]="true" (change)="onTagChange()" >
+          </ng-select>
+        </div>
+      </div>
+    </div>
+  </div>
 </Page>

@@ -9,13 +9,16 @@ import {Manga} from '../pages/Manga/Manga';
 export const routes: Routes = [
   {path: '', component: Home},
   {path: 'login', component: Login},
-  {path: 'reading-room', component: ReadingRoom},
   {path: 'about-us', component: AboutUs},
   {path: 'manga/:id', component: Manga}
 ];
 
+export const readingRoute: Routes = [
+  {path: 'reading-room', component: ReadingRoom},
+]
+
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'top'})],
+  imports: [RouterModule.forRoot(routes, {scrollPositionRestoration: 'top'}), RouterModule.forRoot(readingRoute)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

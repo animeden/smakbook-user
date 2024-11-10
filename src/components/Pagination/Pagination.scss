@@ -1,0 +1,51 @@
+.pagination {
+  display: flex;
+  gap: 20px;
+
+  &__arrow {
+    height: 20px;
+    width: 86px;
+    background: var(--page-color);
+    padding: 4px 6px;
+    text-align: center;
+    border-radius: 4px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__page {
+    height: 20px;
+    min-width: 20px;
+    background: var(--page-color);
+    padding: 4px 6px;
+    text-align: center;
+    border-radius: 4px;
+    opacity: 0.7;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+
+
+  &__selected {
+    font-weight: 700;
+    opacity: 1;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+
+
+  &__disabled{
+    background: #A9A9A9;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}

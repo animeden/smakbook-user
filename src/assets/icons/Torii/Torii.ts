@@ -11,4 +11,5 @@ import {NgIf} from '@angular/common';
 })
 export class ToriiIcon {
   @Input() color: string = "white";
+  @Input() size: string = "60px";
 }
