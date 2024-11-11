@@ -18,7 +18,7 @@ export class Categories {
   $categories = [{title: 'Шьонен', image: "url(/assets/images/categories/shonen.png)"}, {
     title: 'Романтика',
     image: "url(/assets/images/categories/romantic.png)"
-  }, {title: 'Фентазі', image: "url(/assets/images/categories/fantasy.png)"}, {
+  }, {title: 'Фентезі', image: "url(/assets/images/categories/fantasy.png)"}, {
     title: 'Шьоджьо',
     image: "url(/assets/images/categories/shojo.png)"
   }, {title: 'Трилер', image: "url(/assets/images/categories/horror.png)"}, {
