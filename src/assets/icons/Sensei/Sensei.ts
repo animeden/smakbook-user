@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'SenseiIcon',
@@ -6,4 +6,5 @@ import {Component} from '@angular/core';
   templateUrl: './Sensei.html',
 })
 export class SenseiIcon {
+  @Input() $size: string = '60px';
 }

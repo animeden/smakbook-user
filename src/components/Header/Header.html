@@ -16,8 +16,32 @@
            placeholder="Пошук..."/>
   </div>
   <div class="header__tools__items">
-    <SenseiIcon class="header__tools__items__icon" (click)="goTo('/login')"/>
-    <MoonIcon class="header__tools__items__icon" (click)="toggleTheme()"  *ngIf="themeService.getTheme() === 'light'"/>
-    <SunIcon class="header__tools__items__icon" (click)="toggleTheme()"  *ngIf="themeService.getTheme() === 'dark'"/>
+    <span (mouseleave)="closeModal()">
+      <SenseiIcon class="header__tools__items__icon" (click)="goTo('/login')" (mouseenter)="openModal()"/>
+      <div class="header__tools__items__icon__hover" *ngIf="open" (mouseenter)="openModal()"
+           (mouseleave)="closeModal()">
+        <div class="header__tools__items__icon__hover__account">
+          <div class="header__tools__items__icon__hover__account__icon">
+            <SenseiIcon [$size]="'40px'"/>
+          </div>
+          <div class="header__tools__items__icon__hover__account__attributes">
+            <div class="header__tools__items__icon__hover__account__attributes__role">
+              користувач
+            </div>
+            <div class="header__tools__items__icon__hover__account__attributes__name">
+              імя 124
+            </div>
+          </div>
+        </div>
+
+        <div class="header__tools__items__icon__hover__line"></div>
+
+        <div class="header__tools__items__icon__hover__leave">
+          <DoorsIcon/> Вихід
+        </div>
+      </div>
+    </span>
+    <MoonIcon class="header__tools__items__icon" (click)="toggleTheme()" *ngIf="themeService.getTheme() === 'light'"/>
+    <SunIcon class="header__tools__items__icon" (click)="toggleTheme()" *ngIf="themeService.getTheme() === 'dark'"/>
   </div>
 </div>

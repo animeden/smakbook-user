@@ -9,11 +9,12 @@ import {MoonIcon} from '../../assets/icons/Moon';
 import {ThemeService} from '../../app/theme.service';
 import {SunIcon} from '../../assets/icons/Sun';
 import {Logo} from '../Logo';
+import {DoorsIcon} from '../../assets/icons/Doors/Doors';
 
 @Component({
   selector: 'Header',
   standalone: true,
-  imports: [LogoIcon, FormsModule, NgOptimizedImage, DandruffIcon, SenseiIcon, MoonIcon, SunIcon, NgIf, Logo],
+  imports: [LogoIcon, FormsModule, NgOptimizedImage, DandruffIcon, SenseiIcon, MoonIcon, SunIcon, NgIf, Logo, DoorsIcon],
   templateUrl: './Header.html',
   styleUrls: ['./Header.scss']
 })
@@ -21,6 +22,7 @@ export class Header implements OnInit {
 
   @Input() $page: string = '';
   searchTxt: string = '';
+  open: boolean = true;
 
   constructor(private router: Router, protected themeService: ThemeService) {
   }
@@ -49,5 +51,13 @@ export class Header implements OnInit {
   handleSearchChange(event: Event) {
     const input = event.target as HTMLInputElement;
     this.searchTxt = input.value;
+  }
+
+  openModal(){
+    this.open = true;
+  }
+
+  closeModal(){
+    this.open = false;
   }
 }

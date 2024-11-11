@@ -6,7 +6,7 @@ import {MangaCard} from './components/MangaCard/MangaCard';
 import {NgForOf, NgIf} from '@angular/common';
 import {NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent} from '@ng-select/ng-select';
 import {FormsModule} from '@angular/forms';
-import {Pagination} from '../../components/Pagination/Pagination';
+import {Pagination} from '../../components/Pagination';
 import {ToriiIcon} from '../../assets/icons/Torii';
 import {first} from 'rxjs';
 import {GlobeIcon} from '../../assets/icons/Globe';
