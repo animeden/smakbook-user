@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
 @font-face {
   font-family: 'Hakio';
-  src: url('assets/fonts/Font Hakio Free Trial/Hakio Free Trial.woff2') format('woff2'),
-  url('assets/fonts/Font Hakio Free Trial/Hakio Free Trial.woff') format('woff');
+  src: url('assets/fonts/Font Hakio Free Trial/Hakio Free Trial.ttf') format('woff2'),
+  url('assets/fonts/Font Hakio Free Trial/Hakio Free Trial.ttf') format('woff');
   font-weight: normal;
   font-style: normal;
 }
