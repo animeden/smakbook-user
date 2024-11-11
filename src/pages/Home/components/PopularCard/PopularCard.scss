@@ -5,7 +5,7 @@
 
   &__image {
     height: 136px;
-    width: 100px;
+    min-width: 100px;
     background: lightcoral;
 
     &__hover {

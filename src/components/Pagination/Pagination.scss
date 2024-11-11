@@ -1,6 +1,8 @@
 .pagination {
   display: flex;
+  justify-content: center;
   gap: 20px;
+  min-width: 580px;
 
   &__arrow {
     height: 20px;
