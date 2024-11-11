@@ -22,7 +22,7 @@ export class Header implements OnInit {
 
   @Input() $page: string = '';
   searchTxt: string = '';
-  open: boolean = true;
+  open: boolean = false;
 
   constructor(private router: Router, protected themeService: ThemeService) {
   }
