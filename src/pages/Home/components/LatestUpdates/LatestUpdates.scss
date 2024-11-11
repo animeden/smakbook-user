@@ -36,8 +36,7 @@
 
   &__items{
     display: flex;
-    flex-wrap: wrap;
-    gap: 59px;
+    gap: 60px;
 
     &__item{
       width: 228px;
@@ -77,5 +76,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 1800px) {
+  .hide-last-on-small {
+    display: none;
   }
 }
