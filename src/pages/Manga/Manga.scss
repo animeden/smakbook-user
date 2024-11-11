@@ -1,0 +1,153 @@
+.manga {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    background: lightcoral;
+    border-radius: 30px;
+    padding: 120px 60px;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      color: #FFFFFF;
+      max-width: calc(100% - 420px);
+
+      &__title {
+        font-size: 40px;
+        font-weight: 400;
+        line-height: 49px;
+      }
+
+      &__additional-holder {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        &__additional {
+          display: flex;
+          align-items: flex-start;
+          gap: 4px;
+          font-size: 20px;
+
+          &__label {
+            font-weight: 700;
+          }
+
+          &__value {
+
+            &__hover{
+
+              &:hover{
+                cursor: pointer;
+                text-decoration: underline;
+              }
+            }
+
+            &__tags {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 6px;
+            }
+
+          }
+        }
+      }
+
+      &__categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        &__category {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0 20px;
+          height: 30px;
+          color: #320002;
+          position: relative;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 400;
+          z-index: 1;
+          text-transform: capitalize;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: #D9D9D9;
+            border-radius: 30px;
+            box-shadow: 0px 4px 4px 0px #00000040;
+            opacity: 0.5;
+            z-index: -1;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__description {
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+      }
+    }
+
+    &__image {
+      width: 400px;
+      height: 580px;
+      background: crimson;
+    }
+  }
+
+  &__characters-holder {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+
+    &__character {
+      background: #7D7066;
+      padding: 40px 40px 20px 40px;
+      max-width: 412px;
+      color: #FFFFFF;
+      border-radius: 30px;
+
+      &__title {
+        text-align: center;
+        font-family: 'Hakio';
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 58px;
+      }
+
+      &__subcharacters-holder {
+        display: flex;
+        align-items: center;
+
+        &__subcharacter {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 30px;
+
+          &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

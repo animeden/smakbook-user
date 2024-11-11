@@ -1,4 +1,101 @@
 <Page>
-  <WIP [$title]="'Манга'"/>
+  <div class="manga">
+    <div class="manga__card">
+      <div class="manga__card__info">
+
+        <div class="manga__card__info__title">
+          {{ item.title }}
+        </div>
+
+        <div class="manga__card__info__additional-holder">
+
+          <div class="manga__card__info__additional-holder__additional">
+            <div class="manga__card__info__additional-holder__additional__label">Автор:</div>
+            <div class="manga__card__info__additional-holder__additional__value">{{ item.creator }}</div>
+          </div>
+
+          <div class="manga__card__info__additional-holder__additional">
+            <div class="manga__card__info__additional-holder__additional__label">Інші назви:</div>
+            <div class="manga__card__info__additional-holder__additional__value">{{ item.otherNames }}</div>
+          </div>
+
+          <div class="manga__card__info__additional-holder__additional">
+            <div class="manga__card__info__additional-holder__additional__label">Країна походження:</div>
+            <div class="manga__card__info__additional-holder__additional__value__hover"
+                 (click)="goToReadingCountry(item.country.toLowerCase())">{{ item.country }}
+            </div>
+          </div>
+
+          <div class="manga__card__info__additional-holder__additional">
+            <div class="manga__card__info__additional-holder__additional__label">Рік випуску:</div>
+            <div class="manga__card__info__additional-holder__additional__value">{{ item.year }}</div>
+          </div>
+
+          <div class="manga__card__info__additional-holder__additional">
+            <div class="manga__card__info__additional-holder__additional__label">Снан написання:</div>
+            <div class="manga__card__info__additional-holder__additional__value">{{ item.writingStatus }}</div>
+          </div>
+
+          <div class="manga__card__info__additional-holder__additional">
+            <div class="manga__card__info__additional-holder__additional__label">Стан перекладу:</div>
+            <div class="manga__card__info__additional-holder__additional__value__hover"
+                 (click)="goToReadingTranslation(item.translationStatus.toLowerCase())">{{ item.translationStatus }}
+            </div>
+          </div>
+
+          <div class="manga__card__info__additional-holder__additional">
+            <div class="manga__card__info__additional-holder__additional__label">Переклад:</div>
+            <div class="manga__card__info__additional-holder__additional__value">{{ item.translator }}</div>
+          </div>
+
+          <div class="manga__card__info__additional-holder__additional">
+            <div class="manga__card__info__additional-holder__additional__label">Теги:</div>
+            <div class="manga__card__info__additional-holder__additional__value__tags">
+              <div class="manga__card__info__additional-holder__additional__value__hover"
+                   *ngFor="let tag of item.tags" (click)="goToReadingTag(tag.toLowerCase())">
+                {{ '#' + tag }}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="manga__card__info__categories">
+
+          <div class="manga__card__info__categories__category" *ngFor="let category of item.categories"
+               (click)="goToReadingCategory(category.toLowerCase())">
+            {{ category }}
+          </div>
+
+        </div>
+
+        <div class="manga__card__info__description">
+          {{ item.description }}
+        </div>
+
+      </div>
+
+      <div class="manga__card__image"></div>
+
+    </div>
+
+    <div class="manga__characters-holder">
+      <div class="manga__characters-holder__character" *ngFor="let character of item.characters">
+        <div class="manga__characters-holder__character__title">
+          {{ character.title }}
+        </div>
+
+        <div class="manga__characters-holder__character__subcharacters-holder"
+             *ngFor="let subcharacter of character.subcharacters">
+
+          <div class="manga__characters-holder__character__subcharacters-holder__subcharacter">
+            <ArrowIcon/>
+            {{ subcharacter }}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </Page>
 
